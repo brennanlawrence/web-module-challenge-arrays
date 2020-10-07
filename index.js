@@ -66,8 +66,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
+function is31Flavors(arrayName/*your code here*/){
    /*your code here*/
+   if(arrayName.length === 31) {
+       return true;
+   }else {
+       return false;
+   }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,9 +87,10 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
+function addFlavor(arr, newFlavor){
    /*your code here*/
+   arr.unshift(newFlavor);
+   return arr;
 }
 
 
@@ -99,8 +105,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(arrayRemove){
+   arrayRemove.pop();
+   return arrayRemove;
 }
 
 
@@ -115,8 +122,9 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
+function getFlavorByIndex(inputArray, itsIndex/*your code here*/){
     /*your code here*/
+    return inputArray[itsIndex];
 }
 
 
@@ -134,8 +142,10 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(arrayHere, flName){
+    let i = arrayHere.indexOf(flName);
+    arrayHere.splice(i,1);
+    return arrayHere;
 }
 
 
@@ -159,8 +169,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(origArr, string){
+   let holidaySpecials = []
+   for(let i = 0; i < origArr.length; i++) {
+       if(origArr[i].includes(string)){
+           holidaySpecials.push(origArr[i]);
+       }
+   } 
+   return holidaySpecials;
 }
 
 
